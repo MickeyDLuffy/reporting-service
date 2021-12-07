@@ -1,0 +1,17 @@
+report:
+  variables:
+    urls:
+      #      report: localhost:8080
+      redis:
+        topic: "report"
+
+server:
+  port: 9091
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  redis:
+    port: "${REDIS_PORT}"
+    host: "${REDIS_HOST}"
+    password: "${REDIS_PASSWORD}"
