@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.Value;
 
 @Data
-public class Report {
+public class ReportDTO {
     private int description;
     private EventType eventType;
 

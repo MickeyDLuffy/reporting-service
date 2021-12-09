@@ -2,7 +2,7 @@ package com.redbrokers.reports.service.redis;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.redbrokers.reports.dto.Report;
+import com.redbrokers.reports.dto.ReportDTO;
 import com.redbrokers.reports.service.DataStoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,16 +23,16 @@ public class RedisMessageSubscriber implements MessageListener {
         ObjectMapper objectMapper = new ObjectMapper();
 //        dataStoreService.storeDataFromRedis("I am from redis");
 
-        List<Report> report = null;
+        List<ReportDTO> reportDTO = null;
         try {
-            TypeReference<List<Report>> typeRef
+            TypeReference<List<ReportDTO>> typeRef
                     = new TypeReference<>() {};
-            report = objectMapper.readValue(message.getBody(), typeRef);
+            reportDTO = objectMapper.readValue(message.getBody(), typeRef);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        log.info("Loggn the data {}", report);
+        log.info("Loggn the data {}", reportDTO);
     }
 }
