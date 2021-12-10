@@ -20,12 +20,11 @@ spring:
 
   autoconfigure:
     exclude:
-      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
       - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
   datasource:
     url: "jdbc:postgresql://localhost:5432/trading"
-    username: broker
-    password: rouge_broker
+    username: yawe
+    password: yawe
   flyway:
     schemas: trading
 #  jpa:

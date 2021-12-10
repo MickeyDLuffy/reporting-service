@@ -59,13 +59,13 @@ public class RedisConfig {
                 MessageListenerAdapter(new RedisMessageSubscriber(dataStoreService), "onMessage");
     }
 
-    @Bean
-    RedisMessageListenerContainer redisContainer( ) {
-        final RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-        container.setConnectionFactory(jedisConnectionFactory());
-        container.addMessageListener(messageListener(), topic());
-        return container;
-    }
+//    @Bean
+//    RedisMessageListenerContainer redisContainer( ) {
+//        final RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+//        container.setConnectionFactory(jedisConnectionFactory());
+//        container.addMessageListener(messageListener(), topic());
+//        return container;
+//    }
 
     @Bean
     MessagePublisher redisPublisher() {
