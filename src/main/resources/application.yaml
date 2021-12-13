@@ -23,8 +23,8 @@ spring:
       - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
   datasource:
     url: "jdbc:postgresql://localhost:5432/trading"
-    username: yawe
-    password: yawe
+    username: broker
+    password: rouge_broker
   flyway:
     schemas: trading
 #  jpa:
