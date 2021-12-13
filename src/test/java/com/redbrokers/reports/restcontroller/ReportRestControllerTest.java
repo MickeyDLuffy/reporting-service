@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.redbrokers.reports.dto.ReportDTO;
 import com.redbrokers.reports.enums.EventType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,11 +16,11 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class ReportRestControllerTest {
+
+class ReportRestControllerTest  {
     @Autowired
     private MockMvc mockMvc;
 
@@ -28,12 +28,12 @@ class ReportRestControllerTest {
     ObjectMapper obj = new ObjectMapper();
     String reportJsonStr = obj.writeValueAsString(report);
 
-
     ReportRestControllerTest() throws JsonProcessingException {
     }
 
+
     @Test
-    public void testReportEndpoint() throws Exception{
+    public void testReportEndpointReceivesData() throws Exception{
         this.mockMvc.perform(MockMvcRequestBuilders
                 .post("/mq/message")
                 .content(reportJsonStr)
