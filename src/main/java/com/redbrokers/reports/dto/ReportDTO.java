@@ -6,8 +6,14 @@ import lombok.Value;
 
 @Data
 public class ReportDTO {
-    private int description;
+    private String description;
     private EventType eventType;
+
+    public ReportDTO(String description, EventType eventType) {
+        this.description = description;
+        this.eventType = eventType;
+    }
+
 
     @Override
     public String toString() {
