@@ -13,6 +13,7 @@ import java.io.IOException;
 public class CorsFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
         response.setHeader("Access-Control-Allow-Origin", "*");
 //        response.addHeader("Access-Control-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials");
         response.addHeader("Access-Control-Allow-Credentials", "true");
